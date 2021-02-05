@@ -7,7 +7,7 @@ const port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, "build")));
 
-// This route serves the React app (public/index?)
+// This route serves the React app, local is true until deploy to heroku
 app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, "build", "index.html")));
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
