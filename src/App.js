@@ -7,8 +7,7 @@ function App() {
 
   function Comments() {
     // CHANGE TO api.bagpyp.net after pointed
-    const COMMENTS_API_URL = 'https://cors-anywhere.herokuapp.com/' 
-      + 'https://bagpyp-api.herokuapp.com/comments'
+    const COMMENTS_API_URL = 'https://bagpyp-api.herokuapp.com/comments'
     const [comments, setComments] = useState({})
 
     const getComments = async () => {
