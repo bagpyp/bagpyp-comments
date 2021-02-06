@@ -4,29 +4,34 @@ import { useState, useEffect } from 'react';
 
 
 function App() {
-  // CHANGE TO api.bagpyp.net after pointed
-  // const COMMENTS_API_URL = 'http://localhost:5000/comments'
-  const COMMENTS_API_URL = 'https://bagpyp-api.herokuapp.com/comments'
-  const [comments, setComments] = useState({})
-  const [values, setValues] = useState([])
-  const getComments = async () => {
-    const res = await fetch(COMMENTS_API_URL)
-    const json_res = await res.json()
-    setComments(json_res)
-  }
-  const postComment = async (data) => {
-    const options = {
-      method:'POST',
-      body: JSON.stringify(data)
-    }
-    const res = await fetch(COMMENTS_API_URL, options)
-  }
 
-  useEffect(() => {
-    getComments()
-  }, [])
 
   function Comments() {
+
+    // CHANGE TO api.bagpyp.net after pointed
+    // const COMMENTS_API_URL = 'http://localhost:5000/comments'
+    const COMMENTS_API_URL = 'https://bagpyp-api.herokuapp.com/comments'
+    const [comments, setComments] = useState({})
+    const [values, setValues] = useState([])
+    const getComments = async () => {
+      const res = await fetch(COMMENTS_API_URL)
+      const json_res = await res.json()
+      setComments(json_res)
+    }
+    // const postComment = async (data) => {
+    //   const options = {
+    //     method:'POST',
+    //     body: JSON.stringify(data)
+    //   }
+    //   const res = await fetch(COMMENTS_API_URL, options)
+    // }
+
+    useEffect(() => {
+      getComments()
+    }, [])
+
+
+
     return (
       <div className="Comments">
         {Object.keys(comments).map((key, index) => (
