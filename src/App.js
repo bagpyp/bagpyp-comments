@@ -38,7 +38,8 @@ function App() {
           <div key={index}>
             <div className = "Comments-name">{comments[key]["name"]}</ div>
             <div className ="Comments-comment">{comments[key]["comment"]}</ div>
-            <div className = "Comments-created_date">{new Date(Date.parse(comments[key]["created_date"])).toLocaleString(navigator.language)}</div>
+            {/* used to put navigator.language inside toLocaleString(---) */}
+            <div className = "Comments-created_date">{new Date(Date.parse(comments[key]["created_date"])).toLocaleString()}</div>
           </div>
         ))}
       </div>
