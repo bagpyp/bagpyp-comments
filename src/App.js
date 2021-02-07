@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 
 function App() {
   
-  const COMMENTS_API_URL = 'http://localhost:5000/comments'
-  // const COMMENTS_API_URL = 'https://bagpyp-api.herokuapp.com/comments'
+  // const COMMENTS_API_URL = 'http://localhost:5000/comments'
+  const COMMENTS_API_URL = 'https://bagpyp-api.herokuapp.com/comments'
 
   function Comments() {
     const [comments, setComments] = useState({})
