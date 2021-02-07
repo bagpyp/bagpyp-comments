@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -40,7 +40,7 @@
 .Comments {
   display: flex;
   flex-direction: column;
-  width: 20vw;
+  width: 30vw;
   text-align: left;
   margin: 10px;
   padding: 5px;
@@ -53,12 +53,49 @@
   margin-top: 5px;
 }
 
-.Comments-comment {
-  margin-top: 2px;
+.Comments-comment { 
+  font-size:medium;
 }
 
 .Comments-created_date {
   margin-bottom: 5px;
   font-size: x-small;
   color: grey
+}
+
+.CommentForm {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  text-align: left;
+  margin: 10px;
+  padding: 5px;
+}
+
+.CommentForm-name {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 30vw;
+  /* padding-top: 5px;
+  padding-bottom: 5px; */
+  font-size: smaller;
+  margin-bottom: 5px;
+}
+
+.CommentForm-comment {
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 30vw;
+  margin-bottom: 5px;
+  text-align: left;
+  height: 20vh;
+  resize: none;
+
+}
+
+.CommentForm-submit {
+  margin-top: 0;
 }
