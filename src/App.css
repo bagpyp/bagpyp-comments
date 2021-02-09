@@ -1,5 +1,5 @@
 .App {
-  text-align: left;
+  font-family: 'Varela Round';
 }
 
 .App-logo {
@@ -37,6 +37,12 @@
   }
 }
 
+.App-body {
+  display: flex;
+  flex-direction: column;
+}
+
+
 .Comments {
   display: flex;
   flex-direction: column;
@@ -68,15 +74,16 @@
   flex-direction: column;
   width: 30vw;
   text-align: left;
-  margin: 10px;
-  padding: 5px;
+  margin-top: 10px;
+  /* margin: 10px;
+  padding: 5px; */
 }
 
 .CommentForm-name {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 30vw;
+  width: 20vw;
   /* padding-top: 5px;
   padding-bottom: 5px; */
   font-size: smaller;
@@ -84,17 +91,18 @@
 }
 
 .CommentForm-comment {
-
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 30vw;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   text-align: left;
   height: 20vh;
   resize: none;
-
 }
+
+textarea { font-family: inherit; }
+input { font-family: inherit; }
 
 .CommentForm-submit {
   margin-top: 0;

@@ -2,10 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
 
+const ENV = 'production'
+
 function App() {
-  
-  // const COMMENTS_API_URL = 'http://localhost:5000/comments'
-  const COMMENTS_API_URL = 'https://bagpyp-api.herokuapp.com/comments'
+
+  const COMMENTS_API_URL = ((ENV === 'dev') ? 'http://localhost:5000/comments' : 'https://bagpyp-api.herokuapp.com/comments')
 
   function Comments() {
     const [comments, setComments] = useState({})
@@ -25,9 +26,13 @@ function App() {
           method: 'POST',
           body: JSON.stringify(data)
         }
-        const res = await fetch(COMMENTS_API_URL, options)
-        const json_res = await res.json()
-        setComments(json_res)
+        try {
+          const res = await fetch(COMMENTS_API_URL, options)
+          const json_res = await res.json()
+          setComments(json_res)
+        } catch {
+          alert('You fucked up.')
+        }
       }
       useEffect(() => {
         if (Object.keys(comment_data).length !== 0) {
@@ -46,8 +51,8 @@ function App() {
       return (
         <div className="CommentForm">
           <form id="commentForm" onSubmit={handleClick}>
-            <input className="CommentForm-name" type="text" id="name" defaultValue="name"></input><br />
-            <textarea className="CommentForm-comment" id="comment" defaultValue="comment"></textarea><br />
+            <input className="CommentForm-name" type="text" id="name" placeholder="name"></input><br />
+            <textarea className="CommentForm-comment" id="comment" placeholder="comment"></textarea><br />
             <input className="CommentForm-submit" type="submit" value="post"></input>
           </form>
         </div>
@@ -75,8 +80,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>BAGPYP</h1>
       </header>
+      <div className="App-body">
       <Comments />
-      {/* <CommentForm /> */}
+      </div>
     </div>
   );
 }
