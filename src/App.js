@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
 
-const ENV = 'production'
+const ENV = 'prod'
 
 function App() {
 
@@ -81,7 +81,7 @@ function App() {
         <h1>BAGPYP</h1>
       </header>
       <div className="App-body">
-      <Comments />
+        <Comments />
       </div>
     </div>
   );
